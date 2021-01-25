@@ -1,0 +1,16 @@
+name: Commit as github-actions
+
+on:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  create-and-commit-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Commit file as github-actions
+        run: bash ./commit-bot.sh
